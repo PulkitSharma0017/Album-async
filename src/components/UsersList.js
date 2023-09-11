@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../store";
+import Skeleton from "./Skeleton";
 
 function UsersList() {
   const dispatch = useDispatch();
@@ -14,20 +15,26 @@ function UsersList() {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Skeleton className="h-20" times={6} />;
   }
 
   if (error) {
     return <div>Error Fetching Data...</div>;
   }
 
-  if (error) {
-    return <div>Error Fetching Data...</div>;
-  }
+  const renderedUsers = data.map((user) => {
+    return (
+      <div key={user.id} className="mb-2 border rounded">
+        <div className="flex p-2 justify-between items-center cursor=pointer">
+          {user.name}
+        </div>
+      </div>
+    );
+  });
 
   return (
     <div>
-      <div>{data.length}</div>
+      <div>{renderedUsers}</div>
     </div>
   );
 }
