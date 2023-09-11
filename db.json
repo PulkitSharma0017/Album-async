@@ -1,5 +1,26 @@
 {
-  "users": [{ "id": 1, "name": "Myra" }],
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Shelly Zieme MD",
+      "id": 2
+    },
+    {
+      "name": "Felicia Parisian II",
+      "id": 3
+    },
+    {
+      "name": "Miss Elisa Hand",
+      "id": 4
+    },
+    {
+      "name": "Wade Schuster IV",
+      "id": 5
+    }
+  ],
   "albums": [],
   "photos": []
 }
