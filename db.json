@@ -123,5 +123,21 @@
       "id": 91
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 69,
+      "url": "https://picsum.photos/seed/iaI3iRLevr/150/150",
+      "id": 1
+    },
+    {
+      "albumId": 69,
+      "url": "https://picsum.photos/seed/WbldXPF4L/150/150",
+      "id": 2
+    },
+    {
+      "albumId": 70,
+      "url": "https://picsum.photos/seed/EP3wIYa/150/150",
+      "id": 3
+    }
+  ]
 }
