@@ -8,9 +8,46 @@ const photosApi = createApi({
   }),
   endpoints(builder) {
     return {
-      fetchPhotos: builder.query({}),
-      addPhoto: builder.mutation({}),
-      removePhoto: builder.mutation({}),
+      fetchPhotos: builder.query({
+        query: (album) => {
+          return {
+            url: "/photos",
+            params: {
+              albumId: album.id,
+            },
+            method: "GET",
+          };
+        },
+      }),
+      addPhoto: builder.mutation({
+        query: (album) => {
+          return {
+            url: "/photos",
+            method: "POST",
+            body: {
+              albumId: album.id,
+              url: faker.image.url({ width: 150, height: 150 }),
+              //   url: faker.image.urlLoremFlickr({ category: 'nature', width: 150, height: 150 }),
+            },
+          };
+        },
+      }),
+      removePhoto: builder.mutation({
+        query: (photo) => {
+          return {
+            method: "DELETE",
+            url: `/photos/${photo.id}`,
+          };
+        },
+      }),
     };
   },
 });
+
+export const {
+  useFetchPhotosQuery,
+  useAddPhotoMutation,
+  useRemovePhotoMutation,
+} = photosApi;
+
+export { photosApi };
