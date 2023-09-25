@@ -6,6 +6,7 @@ import { removeUser } from "./thunks/removeUser";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { albumsApi } from "./apis/albumsApi";
 import { useFetchAlbumsQuery } from "./apis/albumsApi";
+import { useAddAlbumMutation } from "./apis/albumsApi";
 
 export const store = configureStore({
   reducer: {
@@ -19,4 +20,10 @@ export const store = configureStore({
 
 setupListeners(store.dispatch);
 
-export { fetchUsers, addUsers, removeUser, useFetchAlbumsQuery };
+export {
+  fetchUsers,
+  addUsers,
+  removeUser,
+  useFetchAlbumsQuery,
+  useAddAlbumMutation,
+};
